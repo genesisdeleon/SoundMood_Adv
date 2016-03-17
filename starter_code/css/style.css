@@ -3,4 +3,10 @@
     max-height:500px;
 }
 
+body {
+            font-style: color red
+            font-family: 'Architects Daughter', Monospace;
+            background-image: url("http://www.freevector.com/site_media/preview_images/FreeVector-Red-Speakers.jpg");
+            
 
+}

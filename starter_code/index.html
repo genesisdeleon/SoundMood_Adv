@@ -14,31 +14,154 @@
     <!-- Bootstrap Jumbotron -->
     <link rel="stylesheet" href="css/jumbotron-narrow.css">
 
-    <!-- JS -->
+    <!-- JS -->sssss 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
     <!-- Bootstrap -->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <!-- Soundcloud API -->
-    <script src="//connect.soundcloud.com/sdk.js"></script>
+    <script src="//connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
     <!-- Our JS -->
     <script src="js/script.js"></script>
 
-  </head>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+  
+    <!-- Load Boostrap -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+
+    <!-- Load custom styles -->
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+
+    <!-- Load jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+    <!-- Load Boostrap scripts -->
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- Load Giphy API helper -->
+    <script type="text/javascript" src="./js/giphy.js"></script>
+
+    <!-- Load custom scripts -->
+    <script type="text/javascript" src="./js/scripts.js"></script>
+    
+    <!-- Styles -->	
+<style style="text/css">
+.example1 {
+ height: 50px;	
+ overflow: hidden;
+ position: relative;
+}
+.example1 h3 {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ line-height: 50px;
+ text-align: center;
+ /* Starting position */
+ -moz-transform:translateX(100%);
+ -webkit-transform:translateX(100%);	
+ transform:translateX(100%);
+ /* Apply animation to this element */	
+ -moz-animation: example1 15s linear infinite;
+ -webkit-animation: example1 15s linear infinite;
+ animation: example1 15s linear infinite;
+}
+/* Move it (define the animation) */
+@-moz-keyframes example1 {
+ 0%   { -moz-transform: translateX(100%); }
+ 100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes example1 {
+ 0%   { -webkit-transform: translateX(100%); }
+ 100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes example1 {
+ 0%   { 
+ -moz-transform: translateX(100%); /* Firefox bug fix */
+ -webkit-transform: translateX(100%); /* Firefox bug fix */
+ transform: translateX(100%); 		
+ }
+ 100% { 
+ -moz-transform: translateX(-100%); /* Firefox bug fix */
+ -webkit-transform: translateX(-100%); /* Firefox bug fix */
+ transform: translateX(-100%); 
+ }
+}
+
+h3 {
+    font-size: 200%;
+}
+
+</style>
+
+</head>
+
   <body>
+    
+      <div class="container">
+         
+         <!-- HTML -->	
+<div class="example1">
+<h3>HOW ARE YOU FEELING? WHAT IS YOUR MOOD TODAY? </h3>
+</div>
+    
+    
+    <audio controls id="au" autoplay="autoplay">
+  <source src="Airport Lounge.mp3" type="audio/mpeg">
+  Your browser does not support this audio format.
+</audio>
+
+<script> 
+var c=0;
+var songs = ["Airport Lounge.mp3", "Airport Lounge.mp3", "Airport Lounge.mp3"];
+
+var a=document.getElementById("au");
+a.addEventListener('ended', function(){
+
+document.getElementById("au").src=songs[c]; 
+a.load();  
+console.log(c); 
+c++;
+
+if(c>=songs.length){
+    c=0;
+}
+
+});
+
+</script> 
+
+
     <div class="container">
       <div class="jumbotron">
-        <h1>Soundmood</h1>
-        <p class="lead">Listen to your heart, you can never go wrong.</p>
+        <h1>Gen's Moods </h1>
+        <p class="lead">Music is good for the soul</p>
         <form>
           <div class="input-group">
-            <input id="mood" type="text" class="form-control" placeholder="How are you feeling?">
+            <input id="mood" type="text" class="form-control" placeholder="Como te sientes?">
               <a id="go" class="input-group-addon" href="#" role="button">Go</a>
+              
+              
           </div>
+          
+        
+        
+          
+<div>  <a id="go" class="input-group-addon" href="#" role="button">sad</a> </div>
+<div>  <a id="go" class="input-group-addon" href="#" role="button">happy</a> </div>
+<div>  <a id="go" class="input-group-addon" href="#" role="button">Angry</a> </div>
+
+
+           
+                           
+
+          
         </form>
 
         <br>
-        <p><a id="random" class="btn btn-lg btn-success" href="#" role="button">Randomize</a></p>
+        
         <p id="moodstatus"></p>
         <p id="songtitle"></p>
       </div>
@@ -47,5 +170,7 @@
         <p>&copy; Soundmood</p>
       </div>
     </div>
+    
+    
   </body>
 </html>
